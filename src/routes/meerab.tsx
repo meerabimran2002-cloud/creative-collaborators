@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ProfilePage } from "@/components/ProfilePage";
-import devPink from "@/assets/dev-pink.jpg";
+import meerabReal from "@/assets/meerab-real.jpg";
 
 export const Route = createFileRoute("/meerab")({
   head: () => ({
@@ -27,8 +27,8 @@ function MeerabPage() {
     <ProfilePage
       name="Meerab Imran"
       role="Full Stack Developer & Creative Designer"
-      image={devPink}
-      imageAlt="Pink-themed illustration of Meerab Imran working as a developer"
+      image={meerabReal}
+      imageAlt="Photo of Meerab Imran, full stack developer and creative designer"
       services={["Full Stack Development", "Graphic Designer", "Web & App Development"]}
       projects={[
         {
