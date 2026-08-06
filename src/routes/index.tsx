@@ -4,7 +4,8 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/Reveal";
-import heroImg from "@/assets/hero-collab.jpg";
+import atikaReal from "@/assets/atika-real.jpg";
+import meerabReal from "@/assets/meerab-real.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,12 +53,12 @@ function Index() {
             experiences.»
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
-            <Button asChild variant="hero" size="xl">
+            <Button asChild variant="purple" size="xl">
               <Link to="/atika">
                 Meet Atika <ArrowRight />
               </Link>
             </Button>
-            <Button asChild variant="glass" size="xl">
+            <Button asChild variant="pink" size="xl">
               <Link to="/meerab">
                 Meet Meerab <ArrowRight />
               </Link>
@@ -77,14 +78,17 @@ function Index() {
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="glass shadow-glow relative overflow-hidden rounded-[2.5rem] p-2"
+          className="glass shadow-glow relative grid grid-cols-2 gap-2 overflow-hidden rounded-[2.5rem] p-2"
         >
           <img
-            src={heroImg}
-            alt="Illustration of two female developers collaborating on a web project with laptops"
-            width={1536}
-            height={1024}
-            className="w-full rounded-[2rem] object-cover"
+            src={atikaReal}
+            alt="Photo of Atika Nawaz, full stack developer"
+            className="h-full w-full rounded-[1.75rem] object-cover"
+          />
+          <img
+            src={meerabReal}
+            alt="Photo of Meerab Imran, full stack developer"
+            className="h-full w-full rounded-[1.75rem] object-cover"
           />
         </motion.div>
       </section>

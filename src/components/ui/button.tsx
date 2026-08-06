@@ -19,6 +19,9 @@ const buttonVariants = cva(
         hero: "bg-gradient-brand text-primary-foreground font-semibold shadow-glow hover:-translate-y-0.5 hover:brightness-110",
         glass:
           "glass text-foreground font-semibold hover:-translate-y-0.5 hover:border-primary/50 hover:bg-gradient-soft",
+        purple:
+          "bg-gradient-purple text-primary-foreground font-semibold shadow-glow hover:-translate-y-0.5 hover:brightness-110",
+        pink: "bg-gradient-pink text-primary-foreground font-semibold shadow-glow hover:-translate-y-0.5 hover:brightness-110",
       },
       size: {
         default: "h-9 px-4 py-2",
