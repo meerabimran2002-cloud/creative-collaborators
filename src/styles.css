@@ -64,6 +64,7 @@
 :root {
   --radius: 1.25rem;
   --background: oklch(0.16 0.055 305);
+  --background: oklch(0.17 0.06 340);
   --foreground: oklch(0.97 0.012 320);
   --card: oklch(0.22 0.062 305);
   --card-foreground: oklch(0.97 0.012 320);
@@ -209,6 +210,14 @@
 
 @utility bg-gradient-soft {
   background-image: var(--gradient-soft);
+}
+
+@utility bg-gradient-purple {
+  background-image: var(--gradient-purple);
+}
+
+@utility bg-gradient-pink {
+  background-image: var(--gradient-pink);
 }
 
 @utility shadow-glow {
