@@ -26,20 +26,20 @@ export function ProfilePage({
   linkedin: string;
 }) {
   return (
-    <div className="px-5 pt-28 pb-20 sm:pt-32">
-      <section className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1fr_1.05fr]">
+    <div className="px-4 pt-32 pb-16 sm:px-5 sm:pt-32 sm:pb-20">
+      <section className="mx-auto grid max-w-6xl items-center gap-8 sm:gap-12 lg:grid-cols-[1fr_1.05fr]">
         <motion.div
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="glass shadow-glow overflow-hidden rounded-[2.5rem] p-2"
+          className="glass shadow-glow overflow-hidden rounded-[2rem] p-2 sm:rounded-[2.5rem]"
         >
           <img
             src={image}
             alt={imageAlt}
             width={1024}
             height={1024}
-            className="w-full rounded-[2rem] object-cover"
+            className="w-full rounded-[1.5rem] object-cover sm:rounded-[2rem]"
           />
         </motion.div>
 
@@ -48,18 +48,18 @@ export function ProfilePage({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="glass inline-flex rounded-full px-4 py-1.5 text-xs font-semibold tracking-[0.2em] uppercase">
+          <span className="glass inline-flex rounded-full px-3.5 py-1.5 text-[0.65rem] font-semibold tracking-[0.18em] uppercase sm:px-4 sm:text-xs">
             Profile
           </span>
-          <h1 className="font-display mt-5 text-4xl font-black sm:text-6xl">
+          <h1 className="font-display mt-4 text-3xl font-black sm:mt-5 sm:text-6xl">
             <span className="text-gradient">{name}</span>
           </h1>
-          <p className="mt-3 text-base font-medium text-muted-foreground sm:text-lg">{role}</p>
+          <p className="mt-3 text-sm font-medium text-muted-foreground sm:text-lg">{role}</p>
 
-          <ul className="mt-8 grid gap-3">
+          <ul className="mt-7 grid gap-2.5 sm:mt-8 sm:gap-3">
             {services.map((s, i) => (
               <Reveal key={s} delay={i * 0.06}>
-                <li className="glass card-lift flex items-center gap-3 rounded-2xl px-5 py-4 text-sm font-semibold sm:text-base">
+                <li className="glass card-lift flex items-center gap-3 rounded-2xl px-4 py-3.5 text-sm font-semibold sm:px-5 sm:py-4 sm:text-base">
                   <span className="bg-gradient-brand h-2.5 w-2.5 shrink-0 rounded-full" />
                   {s}
                 </li>
@@ -67,8 +67,8 @@ export function ProfilePage({
             ))}
           </ul>
 
-          <div className="mt-9">
-            <Button asChild variant="hero" size="xl">
+          <div className="mt-8 sm:mt-9">
+            <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
               <a href="#projects">
                 View Projects <ArrowRight />
               </a>
@@ -77,29 +77,31 @@ export function ProfilePage({
         </motion.div>
       </section>
 
-      <section id="projects" className="mx-auto mt-24 max-w-6xl scroll-mt-28">
+      <section id="projects" className="mx-auto mt-16 max-w-6xl scroll-mt-32 sm:mt-24">
         <Reveal>
-          <h2 className="font-display text-center text-3xl font-extrabold sm:text-4xl">
+          <h2 className="font-display text-center text-2xl font-extrabold sm:text-4xl">
             Selected <span className="text-gradient">Projects</span>
           </h2>
         </Reveal>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-6 md:grid-cols-2">
           {projects.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.1}>
               <a
                 href={p.url}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="glass card-lift group block h-full rounded-[1.75rem] p-7"
+                className="glass card-lift group block h-full rounded-[1.5rem] p-5 sm:rounded-[1.75rem] sm:p-7"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">
                     <p className="text-xs font-semibold tracking-[0.18em] text-primary uppercase">
                       {p.tag}
                     </p>
-                    <h3 className="font-display mt-2 truncate text-2xl font-extrabold">{p.name}</h3>
+                    <h3 className="font-display mt-2 truncate text-xl font-extrabold sm:text-2xl">
+                      {p.name}
+                    </h3>
                   </div>
-                  <span className="bg-gradient-soft grid h-11 w-11 shrink-0 place-items-center rounded-full transition-transform duration-300 group-hover:rotate-12">
+                  <span className="bg-gradient-soft grid h-10 w-10 shrink-0 place-items-center rounded-full transition-transform duration-300 group-hover:rotate-12 sm:h-11 sm:w-11">
                     <ExternalLink className="h-4.5 w-4.5" />
                   </span>
                 </div>
@@ -113,16 +115,16 @@ export function ProfilePage({
         </div>
       </section>
 
-      <section className="mx-auto mt-24 max-w-4xl">
+      <section className="mx-auto mt-16 max-w-4xl sm:mt-24">
         <Reveal>
-          <div className="glass rounded-[2rem] px-6 py-11 text-center sm:px-12">
-            <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
+          <div className="glass rounded-[1.75rem] px-5 py-9 text-center sm:rounded-[2rem] sm:px-12 sm:py-11">
+            <h2 className="font-display text-2xl font-extrabold sm:text-4xl">
               Get in <span className="text-gradient">touch</span>
             </h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="mt-7 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4">
               <a
                 href={`mailto:${email}`}
-                className="glass card-lift flex items-center gap-4 rounded-2xl px-5 py-4 text-left"
+                className="glass card-lift flex items-center gap-3 rounded-2xl px-4 py-4 text-left sm:gap-4 sm:px-5"
               >
                 <span className="bg-gradient-brand grid h-11 w-11 shrink-0 place-items-center rounded-full text-primary-foreground">
                   <Mail className="h-5 w-5" />
@@ -136,7 +138,7 @@ export function ProfilePage({
                 href={linkedin}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="glass card-lift flex items-center gap-4 rounded-2xl px-5 py-4 text-left"
+                className="glass card-lift flex items-center gap-3 rounded-2xl px-4 py-4 text-left sm:gap-4 sm:px-5"
               >
                 <span className="bg-gradient-brand grid h-11 w-11 shrink-0 place-items-center rounded-full text-primary-foreground">
                   <Linkedin className="h-5 w-5" />
